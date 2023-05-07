@@ -1,0 +1,133 @@
+<!-- CPT304_A2_1927996_Yueyang Li -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CPT304_A2_1927996</title>
+    <style>
+    /* Styles for the body element */
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      pre {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+        white-space: pre-wrap;
+      }
+    </style>
+
+    <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script> <!-- Link to external jQuery library -->
+    <script src="findHoliday.js"></script> <!-- Link to JavaScript file that retrieves public holiday data -->
+    <script src="findRental.js"></script> <!-- Link to JavaScript file that retrieves accommodation rental information -->
+    <script src="findWeather.js"></script> <!-- Link to JavaScript file that retrieves weather information -->
+  </head>
+
+<body>
+  <!-- The header section of the web page -->
+  <header>
+    <!-- The title of the page -->
+    <h1>CPT304_A2_1927996</h1>
+  </header>
+
+  <main>
+    <!-- Public holidays section -->
+    <h2>Public Holidays</h2>
+    <form>
+      <!-- Input field for the year -->
+      <div>
+        <label for="year">What year do you need?</label>
+        <input type="text" id="year" placeholder="Enter Year (e.g. 2023)">
+      </div>
+      <!-- Input field for the country code -->
+      <div>
+        <label for="countrycode">Which country do you need?</label>
+        <input type="text" id="countrycode" placeholder="Enter Country Code (e.g. CN)">
+      </div>
+      <!-- Button to trigger getting public holidays list -->
+      <div>
+        <button type="button" onclick="getHoliday()">See Public Holidays List</button>
+      </div>
+    </form>
+    <!-- Display area for public holidays list -->
+    <pre id="holidaylist"></pre>
+
+    <!-- Weather information section -->
+    <h2>Weather Information</h2>
+    <form>
+      <!-- Input field for the city name -->
+      <div>
+        <label for="city">Where do you live?</label>
+        <input type="text" id="city" placeholder="Enter City (e.g. Suzhou)">
+      </div>
+      <!-- Input field for the selected holiday -->
+      <div>
+        <label for="holiday">Which holiday do you need?</label>
+        <input type="text" id="holiday" placeholder="Enter the Selected Holiday (e.g. Labour Day)">
+      </div>
+      <!-- Button to trigger getting weather information -->
+      <div>
+        <button type="button" onclick="getWeather()">See Weather Information</button>
+      </div>
+    </form>
+    <!-- Display area for weather information -->
+    <pre id="weatherlist"></pre>
+
+    <!-- Accommodation rental information section -->
+    <h2>Accommodation Rental Information</h2>
+    <form>
+      <!-- Input field for the selected date -->
+      <div>
+        <label for="date">Which day do you need?</label>
+        <input type="text" id="date" placeholder="Enter the Selected Day (e.g. 5.31)">
+      </div>
+      <!-- Button to trigger getting accommodation rental information -->
+      <div>
+        <button type="button" onclick="getHotel()">See Available Rental Information</button>
+      </div>
+    </form>
+    <!-- Display area for accommodation rental information -->
+    <pre id="hotellist"></pre>
+  </main>
+</body>
+</html>
